@@ -1,8 +1,8 @@
-import React from 'react';
-import "../styles/Cell.css";
+import React from "react"
+import "../styles/Cell.css"
 
 const Cell = () => {
-    return <div>Cell</div>
+  return <div>Cell</div>
 }
 
-export default Cell;
+export default Cell
