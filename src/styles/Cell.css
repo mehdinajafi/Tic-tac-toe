@@ -1,0 +1,91 @@
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 9em;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.cell-x {
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #f5af19, #f12711);
+  background: -moz-linear-gradient(to top, #f5af19, #f12711);
+  background: -o-linear-gradient(to top, #f5af19, #f12711);
+  background: linear-gradient(
+    to top,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cell-o {
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #6dd5ed, #2193b0);
+  background: -moz-linear-gradient(to bottom, #6dd5ed, #2193b0);
+  background: -o-linear-gradient(to bottom, #6dd5ed, #2193b0);
+  background: linear-gradient(
+    to bottom,
+    #6dd5ed,
+    #2193b0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+  border-left: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+  border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+  border-bottom: none;
+}
+
+/*------- Width -------*/
+@media only screen and (max-width: 600px) {
+  .cell {
+    font-size: 7em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .cell {
+    font-size: 5em;
+  }
+}
+
+@media only screen and (max-width: 240px) {
+  .cell {
+    font-size: 4em;
+  }
+}
+
+/*------- Height -------*/
+@media only screen and (max-height: 750px) {
+  .cell {
+    font-size: 6em;
+  }
+}

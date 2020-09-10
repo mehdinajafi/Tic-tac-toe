@@ -1,0 +1,36 @@
+.board {
+  display: grid;
+  grid-template-columns: 12em 12em 12em;
+  grid-template-rows: 12em 12em 12em;
+  border-radius: 0.5em;
+}
+
+/*------- Width -------*/
+@media only screen and (max-width: 600px) {
+  .board {
+    grid-template-columns: 8em 8em 8em;
+    grid-template-rows: 8em 8em 8em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .board {
+    grid-template-columns: 5em 5em 5em;
+    grid-template-rows: 5em 5em 5em;
+  }
+}
+
+@media only screen and (max-width: 240px) {
+  .board {
+    grid-template-columns: 4em 4em 4em;
+    grid-template-rows: 4em 4em 4em;
+  }
+}
+
+/*------- Height -------*/
+@media only screen and (max-height: 750px) {
+  .board {
+    grid-template-columns: 6em 6em 6em;
+    grid-template-rows: 6em 6em 6em;
+  }
+}

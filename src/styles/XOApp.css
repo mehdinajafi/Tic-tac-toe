@@ -1,0 +1,128 @@
+/*--------------------- Start container style --------------------- */
+.container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-rows: 3em auto auto;
+  height: 100vh;
+}
+
+@media only screen and (max-height: 510px) {
+  .container {
+    grid-template-columns: 7em auto auto auto;
+    grid-template-rows: auto;
+  }
+}
+
+/*--------------------- End container style --------------------- */
+
+/*--------------------- Start status style --------------------- */
+.status {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.status-gamer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+.turn-x {
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #f5af19, #f12711);
+  background: -moz-linear-gradient(to top, #f5af19, #f12711);
+  background: -o-linear-gradient(to top, #f5af19, #f12711);
+  background: linear-gradient(
+    to top,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #ffffff;
+}
+
+.turn-o {
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #6dd5ed, #2193b0);
+  background: -moz-linear-gradient(to bottom, #6dd5ed, #2193b0);
+  background: -o-linear-gradient(to bottom, #6dd5ed, #2193b0);
+  background: linear-gradient(
+    to bottom,
+    #6dd5ed,
+    #2193b0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #ffffff;
+}
+
+/*--------------------- End status style --------------------- */
+
+/*--------------------- Start winner style --------------------- */
+.winner {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 0.5em;
+  background-color: #3b17dd;
+  color: #ffffff;
+}
+/*--------------------- End winner style --------------------- */
+
+/*--------------------- Start btn style --------------------- */
+.btns-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.btn {
+  color: #ffffff;
+  font-family: "Varela Round", sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  width: 48%;
+  padding: 1em;
+  outline: none;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(1);
+}
+
+.next-btn {
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2);
+  background: -moz-linear-gradient(to right, #4a00e0, #8e2de2);
+  background: -o-linear-gradient(to right, #4a00e0, #8e2de2);
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.restart-btn {
+  background: #e52d27; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #b31217, #e52d27);
+  background: -moz-linear-gradient(to right, #b31217, #e52d27);
+  background: -o-linear-gradient(to right, #b31217, #e52d27);
+  background: linear-gradient(
+    to right,
+    #b31217,
+    #e52d27
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*--------------------- End btn style --------------------- */
