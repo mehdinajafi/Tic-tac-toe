@@ -1,12 +1,13 @@
 import React from "react"
 import Board from "./Board"
 import { connect } from "react-redux"
-import { updateBoard } from "../redux/actions"
+import { updateBoard, calcWinner } from "../redux/actions"
 import "../styles/XOApp.css"
 
-const XOApp = ({ board, turn, winner, updateBoard }) => {
+const XOApp = ({ board, turn, winner, updateBoard, calcWinner }) => {
   const onClickCell = (index) => {
     updateBoard(index)
+    calcWinner()
   }
 
   return (
@@ -50,6 +51,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   updateBoard: (index) => dispatch(updateBoard(index)),
+  calcWinner: () => dispatch(calcWinner()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(XOApp)
