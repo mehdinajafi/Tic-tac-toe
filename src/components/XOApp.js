@@ -1,19 +1,28 @@
 import React from "react"
 import Board from "./Board"
 import { connect } from "react-redux"
-import { updateBoard, calcWinner, restartGame } from "../redux/actions"
+import {
+  updateBoard,
+  calcWinner,
+  nextGame,
+  restartGame,
+} from "../redux/actions"
 import "../styles/XOApp.css"
 
 const XOApp = ({
   board,
   turn,
   winner,
+  winTimes,
   updateBoard,
   calcWinner,
+  nextGame,
   restartGame,
 }) => {
   const onClickCell = (index) => {
     updateBoard(index)
+    // Calc winner if the game has a winner, the number of wins is added.
+    // See ./redux/reducer line 33
     calcWinner()
   }
 
@@ -21,10 +30,10 @@ const XOApp = ({
     <div className="container">
       <div className="status">
         <div className={`status-gamer ${turn === "x" ? "turn-x" : ""}`}>
-          X : 0
+          X : {winTimes.x}
         </div>
         <div className={`status-gamer ${turn === "o" ? "turn-o" : ""}`}>
-          O : 0
+          O : {winTimes.o}
         </div>
       </div>
 
@@ -44,7 +53,7 @@ const XOApp = ({
         <button type="button" onClick={restartGame} className="btn restart-btn">
           Restart
         </button>
-        <button type="button" className="btn next-btn">
+        <button type="button" onClick={nextGame} className="btn next-btn">
           Next
         </button>
       </div>
@@ -59,6 +68,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   updateBoard: (index) => dispatch(updateBoard(index)),
   calcWinner: () => dispatch(calcWinner()),
+  nextGame: () => dispatch(nextGame()),
   restartGame: () => dispatch(restartGame()),
 })
 

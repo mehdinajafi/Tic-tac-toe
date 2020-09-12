@@ -11,6 +11,12 @@ export const calcWinner = () => {
   }
 }
 
+export const nextGame = () => {
+  return {
+    type: "NEXT_GAME",
+  }
+}
+
 export const restartGame = () => {
   return {
     type: "RESTART_GAME",
