@@ -44,6 +44,8 @@ function XOGameReducer(state = initialState, action) {
         return { ...state, winner: "=" }
       }
       return state
+    case "RESTART_GAME":
+      return initialState
     default:
       return state
   }
