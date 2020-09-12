@@ -1,9 +1,14 @@
 import React from "react"
 import "../styles/Cell.css"
 
-const Cell = ({ cell }) => {
+const Cell = ({ cell, onClickCell }) => {
   return (
-    <div className={`cell ${cell === "x" ? "cell-x" : "cell-o"}`}>{cell}</div>
+    <div
+      className={`cell ${cell === "x" ? "cell-x" : "cell-o"}`}
+      onClick={onClickCell}
+    >
+      {cell}
+    </div>
   )
 }
 

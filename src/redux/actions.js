@@ -5,12 +5,6 @@ export const updateBoard = (index) => {
   }
 }
 
-export const changeTurn = () => {
-  return {
-    type: "CHANGE_TURN",
-  }
-}
-
 export const calcWinner = () => {
   return {
     type: "CALC_WINNER",

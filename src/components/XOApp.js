@@ -1,9 +1,14 @@
 import React from "react"
 import Board from "./Board"
 import { connect } from "react-redux"
+import { updateBoard } from "../redux/actions"
 import "../styles/XOApp.css"
 
-const XOApp = ({ board, turn, winner }) => {
+const XOApp = ({ board, turn, winner, updateBoard }) => {
+  const onClickCell = (index) => {
+    updateBoard(index)
+  }
+
   return (
     <div className="container">
       <div className="status">
@@ -25,7 +30,7 @@ const XOApp = ({ board, turn, winner }) => {
         </h3>
       </div>
 
-      <Board board={board} />
+      <Board board={board} onClickCell={onClickCell} />
 
       <div className="btns-wrapper">
         <button type="button" className="btn restart-btn">
@@ -43,4 +48,8 @@ const mapStateToProps = (state) => {
   return state
 }
 
-export default connect(mapStateToProps)(XOApp)
+const mapDispatchToProps = (dispatch) => ({
+  updateBoard: (index) => dispatch(updateBoard(index)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(XOApp)
